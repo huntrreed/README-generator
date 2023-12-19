@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+//An array of questions for user input
 const questions = [
     { 
     type: 'input',
@@ -11,17 +11,18 @@ const questions = [
     }
 
 ];
+console.log(questions);
 
 // TODO: Create a function to write README file
-function writeToFile(README.md, data) {
-    fs.writeFile(README.md, data, (error!) =>
-    err ? console.error(error!) : console.log('README.md generated!')
+function writeToFile(ReadMeGen, data) {
+    fs.writeFile(ReadMeGen, data, (err) =>
+    err ? console.error(err) : console.log('README.md generated!')
     );
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.createPromptModule(questions)
+    inquirer.prompt(questions)
     .then((answers)=> {
         const readmeContent = generateReadmeContent(answers);
         writeToFile('README.md', readmeContent);
@@ -29,4 +30,7 @@ function init() {
 }
 
 // Function call to initialize app
+function generateReadmeContent(answers){
+    return
+}
 init();
