@@ -21,17 +21,17 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'usage information',
+        name: 'usageInformation',
         message: 'How do is your application used?'
     },
     {
         type: 'input',
-        name: 'contribution guidelines',
+        name: 'contributionGuidelines',
         message: 'What are the guidelines for your project?'
     },
     {
         type: 'input',
-        name: 'test instructions',
+        name: 'testInstructions',
         message: 'How do you test the project?'
     },
     {
@@ -61,8 +61,33 @@ function init() {
 }
 
 // Function call to initialize app
-function generateReadmeContent(answers){
-    return
+function generateReadmeContent(answers) {
+    return `
 
-    
+ # ${answers.title}
+ 
+ ## Description
+${answers.description}
+
+ ## (Table of Contents)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+    - [Questions](#questions)
+
+## Installation
+${answers.installation}
+
+## Usage
+${answers.usageInformation}
+
+## Contributing
+${answers.contributionGuidelines}
+
+## Tests
+${answers.testInstructions}
+`;
+}
+
 init();
