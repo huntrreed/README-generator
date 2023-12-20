@@ -35,6 +35,11 @@ const questions = [
         message: 'How do you test the project?'
     },
     {
+        type: 'input',
+        name: 'DemoLink',
+        message: 'Do you have a video link to a demonstration of the page? If so, put it here. Note: If you are adding screenshots or a demonstration other than a link, you will need to add that manually'
+    },
+    {
         type: 'list',
         name: 'license',
         message: 'Choose a license from the following list for your project:',
@@ -54,6 +59,11 @@ const questions = [
         type: 'input',
         name: "email",
         message: "What is your email address?"
+    },
+    {
+        type: 'input',
+        name: "DeployedRepo",
+        message: "What is the link to the deployed repo?"
     }
 ];
 //checking that questions are loading correctly
@@ -113,33 +123,41 @@ function generateReadmeContent(answers) {
 ${answers.description}
 
  ## Table of Contents
-    - [Installation](##installation)
-    - [Usage](###usage)
-    - [Contributing](###contributing)
-    - [Tests](###tests)
-    - [License](###license)
-    - [Questions](##questions)
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [Contributing](#contributing)
+ - [Tests](#tests)
+ - [License](#license)
+ - [Questions](#questions)
 
 ## Installation
 ${answers.installation}
 
-### Usage
+## Usage
 ${answers.usageInformation}
 
-### Contributing
+## Contributing Guidelines
 ${answers.contributionGuidelines}
 
-### Tests
+## Demo
+Below is a demonstration of the application.
+Click [here](${answers.DemoLink}) for a demonstration of the application.
+
+## Tests
 ${answers.testInstructions}
 
 
-### License
+## License
 ${licenseInfo.notice}
 
 ## Questions
+
 Contact me with any other questions regarding this project via the email listed below
 GitHub: [${answers.GithubUserName}](${answers.GithubLink})
 Email: ${answers.email}
+
+### Deployed Link
+[Deployed Application Page](${answers.DeployedRepo})
 `;
 }
 
